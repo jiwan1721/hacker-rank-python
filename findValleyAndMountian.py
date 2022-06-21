@@ -22,4 +22,23 @@ def findValley(valleys):
     print("print total number of valley: ",valley)
     print("print total number of mountain: ",mountain)
 
+def againFindValley(valleys):
+    altitude = 0
+    valley=0
+    mountain=0
+    for letter in valleys:
+        upward = letter.lower()=="u"
+        if upward:
+            altitude+=1
+        else:
+            altitude-=1
+        if altitude==0 and upward:
+            valley+=1
+        elif altitude ==0 and not upward:
+            mountain+=1
+    return mountain,valley
+
+print(againFindValley(valleys))
+
+
 findValley(valleys)
