@@ -18,8 +18,8 @@ def removedict(my_dict):
         if my_dict.count(item)>1:
             indixes = [i for i in range(len(my_dict)) if my_dict[i] == item]
             count = my_dict.count(item)
-            # for i in indixes:
-            #     my_dict.pop(i)
+            for i in reversed(indixes):
+                my_dict.pop(i)
             item['count']=count
             double_list.append(item)
     return unique_dist+double_list
