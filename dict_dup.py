@@ -24,4 +24,24 @@ def removedict(my_dict):
             double_list.append(item)
     return unique_dist+double_list
 
-print(removedict(my_dict))
+# print(removedict(my_dict))
+
+def removedict1(my_dict):
+    import copy
+    if not isinstance(my_dict, list):
+        return f"sorry expected list but got {type(mydict)}"
+    if not my_dict:
+        return "list may not be empty"
+    unique_dist=[item for item in my_dict if my_dict.count(item)==1]
+    double_list=[]
+    common = []
+    for item in my_dict:
+        if my_dict.count(item)>1 and item not in common:
+            common.append(item)
+            x = copy.deepcopy(item)
+            x['count']=my_dict.count(item)
+            double_list.append(x)
+        
+    return unique_dist+double_list
+
+print(removedict1(my_dict))
