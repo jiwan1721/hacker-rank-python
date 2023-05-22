@@ -92,3 +92,9 @@ def miniMaxSum1(arr):
 
 arr = [1,3,5,7,9]
 print(miniMaxSum1(arr))
+
+def birthdayCakeCandles(candles):
+    # Write your code here
+    x = sorted(candles,reverse=True)
+    print(x.count(x[0]))
+birthdayCakeCandles([2,4,5,5,6])
