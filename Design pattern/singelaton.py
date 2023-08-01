@@ -86,7 +86,10 @@ def download_images(thread_name):
                 if src not in singleton.image_downloaded:
                     singleton.image_downloaded.add(src)
                     print('Downloading', src)
-                    urllib.request.urlretrieve(src, os.path.join('images', basename))
+                    try:
+                        urllib.request.urlretrieve(src, os.path.join('images', basename))
+                    except Exception:
+                        continue
                     
 def main():
     crawl = CrawlerSingleton()
